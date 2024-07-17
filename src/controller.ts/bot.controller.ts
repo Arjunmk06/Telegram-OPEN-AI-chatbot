@@ -19,8 +19,7 @@ export class BotController {
     public static async getReply(message: any){
         let thread
         /*for test purspose i am hard-code the thread_id. Better to use one thread_id for one user as openai docs.
-          You can use your database for save the thread with user name match pair
-          can use the retriveThreadId function to save and get thread_id*/
+          You can use your database for save the thread with user name match pair*/
 
         thread = "<YOUR OPENAI THREAD_ID>"
         const addMessage = await openai.beta.threads.messages.create(thread, {
