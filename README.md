@@ -1,4 +1,4 @@
-# BreadcrumbsTelegram-OPEN-AI-chatbot
+# Telegram-OPEN-AI-chatbot
 
 This project sample of how can we integrate telegram bot and OPEN AI assitant apis to create a personalized chatbot.
 
