@@ -1,10 +1,11 @@
 import TelegramBot from 'node-telegram-bot-api';
+import { Configurations } from '../config';
 import { BotController } from './controller.ts/bot.controller';
 
 
-const token = "< YOUR TELEGRAM BOT TOKEN>"
+const token = Configurations.Config.telegram_bot_token
 
-const bot = new TelegramBot(token, {polling: true});
+const bot = new TelegramBot(token!, {polling: true});
 
 
 bot.onText(/\/start/, (msg)=>{

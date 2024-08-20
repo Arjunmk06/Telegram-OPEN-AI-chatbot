@@ -1,0 +1,10 @@
+node_modules
+coverage/
+npm-debug.log
+output.md
+output/
+lib/
+lib-doc/
+.DS_Store
+.env
+README.md

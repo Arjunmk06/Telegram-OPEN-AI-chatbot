@@ -1,12 +1,13 @@
 import OpenAI  from "openai";
-
+import { Configurations } from "../../config";
+console.log(Configurations.Config)
 const openai = new OpenAI({
-    apiKey: "<YOUR OPENAI KEY>"
+    apiKey: Configurations.Config.openai_apikey
 })
 
 
-const assistant = "<YOUR OPENAI ASSISTANT_ID>"
-const file = "<YOUR OPENAI FILE_ID>"
+const assistant = Configurations.Config.openai_assistant_id
+const file = Configurations.Config.openai_file_id
 
 const delay = (ms: number): Promise<void> => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -21,8 +22,9 @@ export class BotController {
         /*for test purspose i am hard-code the thread_id. Better to use one thread_id for one user as openai docs.
           You can use your database for save the thread with user name match pair*/
 
-        thread = "<YOUR OPENAI THREAD_ID>"
-        const addMessage = await openai.beta.threads.messages.create(thread, {
+        thread = Configurations.Config.openai_thread_id
+        console.log("emss")
+        const addMessage = await openai.beta.threads.messages.create(thread!, {
             role: "user",
             content : message.text,
             attachments: [
@@ -34,8 +36,8 @@ export class BotController {
         })
         console.log("Message added", addMessage)
 
-        let myRun = await openai.beta.threads.runs.create(thread,{
-            assistant_id: assistant,
+        let myRun = await openai.beta.threads.runs.create(thread!,{
+            assistant_id: assistant!,
             instructions: "You are a customer support chatbot. Use your knowledge base to best respond to customer queries."
         })
         console.log("myRun", myRun)
