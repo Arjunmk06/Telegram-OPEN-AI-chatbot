@@ -2,10 +2,6 @@
 
 This project sample of how can we integrate telegram bot and OPEN AI assitant apis to create a personalized chatbot.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
 
 ## Installation
 
@@ -50,4 +46,9 @@ for creating open AI token and add file in open AI  check this - [open ai token]
     ```
 
 2. To start open the bot ib telegram send "/start" message it will reply back "Welcome to your assistant. How can i help you?" after that you can ask the question for realted to your sample-pdf content.
+
+
+##Demo
+
+
 
